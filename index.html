@@ -1,1 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VogelKop — Blockchain + AI Powered Property Platform</title>
+  <style>
+    :root {
+      --primary: #0070f3;
+      --accent-light: #dbeafe;
+      --accent-dark: #1e3a8a;
+      --bg-light: #f9fafb;
+      --text-dark: #1f2937;
+      --text-muted: #6b7280;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-dark);
+      background: white;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: white;
+      z-index: 100;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    header .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .menu {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .menu a {
+      padding: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .menu a:hover {
+      color: var(--primary);
+    }
+
+    .cta {
+      background: var(--primary);
+      color: white;
+      padding: 0.6rem 1.3rem;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+
+    .cta:hover {
+      background: #0051bb;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 100px 20px 80px;
+      background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+    }
+
+    .hero h1 {
+      font-size: 2.7rem;
+      max-width: 800px;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .features {
+      background: white;
+      padding: 80px 0;
+    }
+
+    .features h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: var(--text-dark);
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 1.5rem;
+      background: var(--bg-light);
+      transition: all 0.2s;
+    }
+
+    .feature:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .feature h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      color: var(--accent-dark);
+    }
+
+    .feature p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .bottom-cta {
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(to right, #3b82f6, #1e40af);
+      color: white;
+    }
+
+    .bottom-cta h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .bottom-cta .cta {
+      background: white;
+      color: #1e3a8a;
+      margin-top: 1rem;
+    }
+
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 20px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">VogelKop</div>
+      <nav class="menu">
+        <a href="#features">Features</a>
+        <a href="#tech">Tech</a>
+        <a href="#contact">Contact</a>
+        <a href="#get-started" class="cta">Get Started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <h1>Revolutionizing Property Management with Blockchain & AI</h1>
+      <p>VogelKop empowers tenants, managers, owners, and HOAs with transparent, intelligent, and decentralized tools — all on one powerful platform.</p>
+      <a href="#get-started" class="cta">Start Now</a>
+    </section>
+
+    <section class="features container" id="features">
+      <h2>Platform Features</h2>
+      <div class="feature-list">
+        <div class="feature">
+          <h3>Smart Tenant Portal</h3>
+          <p>AI-powered chat & support, digital lease docs, maintenance ticketing, and secure rent payments.</p>
+        </div>
+        <div class="feature">
+          <h3>Owner Analytics</h3>
+          <p>Real-time portfolio insights, blockchain-backed transactions, and automated reporting tools.</p>
+        </div>
+        <div class="feature">
+          <h3>Manager Automation</h3>
+          <p>Lease automation, background checks, rent flows, and scheduling — powered by AI decision engines.</p>
+        </div>
+        <div class="feature">
+          <h3>HOA & Community</h3>
+          <p>Voting, dues, announcements, and governance — stored securely on blockchain for transparency.</p>
+        </div>
+        <div class="feature">
+          <h3>DeFi Payments</h3>
+          <p>Tenants and owners transact with fiat, crypto, or stablecoins — all with verifiable ledgers.</p>
+        </div>
+        <div class="feature">
+          <h3>Predictive AI Insights</h3>
+          <p>Forecast maintenance needs, rent trends, and churn risks with explainable machine learning models.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-cta" id="get-started">
+      <h2>Ready to unlock next-gen property tools?</h2>
+      <a href="#signup" class="cta">Create Your Free Account</a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 VogelKop — Built with Blockchain & AI · All rights reserved.
+  </footer>
+</body>
+</html>
 
