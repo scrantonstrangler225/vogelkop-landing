@@ -80,6 +80,10 @@
       border-radius: 6px;
       font-weight: bold;
       transition: background 0.2s ease;
+      cursor: pointer;
+      display: inline-block;
+      border: none;
+      font-size: 1rem;
     }
 
     .cta:hover {
@@ -155,6 +159,7 @@
       text-align: center;
       background: linear-gradient(to right, #3b82f6, #1e40af);
       color: white;
+      position: relative;
     }
 
     .bottom-cta h2 {
@@ -166,6 +171,55 @@
       background: white;
       color: #1e3a8a;
       margin-top: 1rem;
+    }
+
+    .signup-form {
+      max-width: 500px;
+      margin: 20px auto 0;
+      background: white;
+      color: #1f2937;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: none;
+      text-align: left;
+    }
+
+    .signup-form.active {
+      display: block;
+    }
+
+    .signup-form label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .signup-form input,
+    .signup-form select {
+      width: 100%;
+      padding: 8px 10px;
+      margin-bottom: 15px;
+      border: 1px solid #cbd5e1;
+      border-radius: 5px;
+      font-size: 1rem;
+      color: #1f2937;
+    }
+
+    .signup-form button {
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .signup-form button:hover {
+      background: #0051bb;
     }
 
     footer {
@@ -240,7 +294,43 @@
 
     <section class="bottom-cta" id="get-started">
       <h2>Ready to unlock next-gen property tools?</h2>
-      <a href="#signup" class="cta">Create Your Free Account</a>
+      <button class="cta" id="showSignupBtn">Create Your Free Account</button>
+
+      <!-- Google Form POST -->
+      <form 
+        class="signup-form" 
+        id="signupForm" 
+        action="https://docs.google.com/forms/d/e/your-form-id/formResponse" 
+        method="POST" 
+        target="hidden_iframe" 
+        onsubmit="submitted=true;"
+      >
+        <label for="fullName">Full Name *</label>
+        <input type="text" name="entry.123456789" required placeholder="Your full name" />
+
+        <label for="email">Email Address *</label>
+        <input type="email" name="entry.987654321" required placeholder="you@example.com" />
+
+        <label for="role">I am a *</label>
+        <select name="entry.234567890" required>
+          <option value="" disabled selected>Select your role</option>
+          <option value="Tenant">Tenant</option>
+          <option value="Property Manager">Property Manager</option>
+          <option value="Owner">Owner</option>
+          <option value="HOA Member">HOA Member</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="interest">What interests you most about VogelKop?</label>
+        <input type="text" name="entry.345678901" placeholder="E.g., AI insights, DeFi payments..." />
+
+        <label for="referral">How did you hear about us?</label>
+        <input type="text" name="entry.456789012" placeholder="Friend, social, event, etc." />
+
+        <button type="submit">Join Beta</button>
+      </form>
+
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     </section>
   </main>
 
@@ -250,14 +340,24 @@
       |
       <a href="mailto:innovation@vogelkop.world">Contact</a>
       |
-      <a href="https://linkedin.com/company/vogelkop-world" target="_blank" rel="noopener noreferrer">Linkedin</a>
+      <a href="https://linkedin.com/company/vogelkop-world" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       |
       <a href="/privacy.html">Privacy Policy</a>
       |
       <a href="/terms.html">Terms of Use</a>
     </div>
-    
   </footer>
+
+  <script>
+    const showSignupBtn = document.getElementById('showSignupBtn');
+    const signupForm = document.getElementById('signupForm');
+
+    showSignupBtn.addEventListener('click', () => {
+      signupForm.classList.toggle('active');
+      showSignupBtn.textContent = signupForm.classList.contains('active')
+        ? 'Hide Signup Form'
+        : 'Create Your Free Account';
+    });
+  </script>
 </body>
 </html>
-
