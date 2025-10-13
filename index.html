@@ -298,12 +298,9 @@
 
       <!-- Google Form POST -->
       <form 
-        class="signup-form" 
         id="signupForm" 
         action="https://docs.google.com/forms/d/e/1FAIpQLSeJoZXAAct-tJnE5Rp6TjPiUrzWT8J73Rx0T1GKFDl45lXgnw/formResponse" 
         method="POST" 
-        target="hidden_iframe" 
-        onsubmit="submitted=true;"
       >
         <label for="fullName">Full Name *</label>
         <input type="text" name="entry.1246836492" required placeholder="Your full name" />
@@ -337,13 +334,30 @@
       </div>
 
       <script>
-        let submitted = false;
+        const form = document.getElementById('signupForm');
+        form.addEventListener('submit', function(e) {
+          e.preventDefault(); // stop default form submission
+          const data = new FormData(form);
+
+          fetch(form.action, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: data
+          }).then(() => {
+            showThankYou();
+            form.reset();
+          }).catch(err => {
+            alert("Something went wrong.");
+            console.error(err);
+          });
+        });
 
         function showThankYou() {
-          document.getElementById("signupForm").style.display = "none";
-          document.getElementById("thankYouMessage").style.display = "block";
+          form.style.display = 'none';
+          document.getElementById('thankYouMessage').style.display = 'block';
         }
       </script>
+
     </section>
   </main>
 
