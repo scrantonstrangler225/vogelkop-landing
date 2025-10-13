@@ -173,40 +173,47 @@
       margin-top: 1rem;
     }
 
-    .signup-form {
-      max-width: 500px;
-      margin: 20px auto 0;
+    /* New Join Beta Section Styles */
+    .beta-section {
+      background: var(--accent-light);
+      padding: 60px 20px;
+    }
+
+    .beta-title {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--accent-dark);
+      margin-bottom: 2rem;
+    }
+
+    .beta-form {
+      max-width: 600px;
+      margin: 0 auto;
       background: white;
-      color: #1f2937;
-      padding: 20px;
+      padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      display: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       text-align: left;
     }
 
-    .signup-form.active {
-      display: block;
-    }
-
-    .signup-form label {
+    .beta-form label {
       display: block;
       margin-bottom: 6px;
       font-weight: 600;
     }
 
-    .signup-form input,
-    .signup-form select {
+    .beta-form input,
+    .beta-form select {
       width: 100%;
-      padding: 8px 10px;
-      margin-bottom: 15px;
+      padding: 10px;
+      margin-bottom: 20px;
       border: 1px solid #cbd5e1;
       border-radius: 5px;
       font-size: 1rem;
-      color: #1f2937;
+      color: var(--text-dark);
     }
 
-    .signup-form button {
+    .beta-form button {
       background: var(--primary);
       color: white;
       padding: 0.75rem 1.5rem;
@@ -216,9 +223,11 @@
       font-size: 1rem;
       cursor: pointer;
       transition: background 0.2s ease;
+      display: block;
+      margin: 0 auto;
     }
 
-    .signup-form button:hover {
+    .beta-form button:hover {
       background: #0051bb;
     }
 
@@ -292,65 +301,69 @@
       </div>
     </section>
 
-    <section>
-  <h2 class="section-title">Join the Beta</h2>
-  <form 
-    action="https://docs.google.com/forms/d/e/1FAIpQLSeJoZXAAct-tJnE5Rp6TjPiUrzWT8J73Rx0T1GKFDl45lXgnw/formResponse" 
-    method="POST" 
-    target="_blank" 
-    novalidate
-  >
-    <label for="fullName">Full Name *</label>
-    <input 
-      type="text" 
-      id="fullName" 
-      name="entry.1246836492" 
-      required 
-      placeholder="Your full name" 
-    />
+    <!-- Join the Beta Section -->
+    <section class="beta-section">
+      <div class="container">
+        <h2 class="beta-title">Join the Beta</h2>
+        <form 
+          class="beta-form"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSeJoZXAAct-tJnE5Rp6TjPiUrzWT8J73Rx0T1GKFDl45lXgnw/formResponse" 
+          method="POST" 
+          target="_blank" 
+          novalidate
+        >
+          <label for="fullName">Full Name *</label>
+          <input 
+            type="text" 
+            id="fullName" 
+            name="entry.1246836492" 
+            required 
+            placeholder="Your full name" 
+          />
 
-    <label for="email">Email Address *</label>
-    <input 
-      type="email" 
-      id="email" 
-      name="entry.420741825" 
-      required 
-      placeholder="you@example.com" 
-    />
+          <label for="email">Email Address *</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="entry.420741825" 
+            required 
+            placeholder="you@example.com" 
+          />
 
-    <label for="role">I am a *</label>
-    <select 
-      id="role" 
-      name="entry.1205028045" 
-      required
-    >
-      <option value="" disabled selected>Select your role</option>
-      <option value="Tenant">Tenant</option>
-      <option value="Property Manager">Property Manager</option>
-      <option value="Owner">Owner</option>
-      <option value="HOA Member">HOA Member</option>
-      <option value="Other">Other</option>
-    </select>
+          <label for="role">I am a *</label>
+          <select 
+            id="role" 
+            name="entry.1205028045" 
+            required
+          >
+            <option value="" disabled selected>Select your role</option>
+            <option value="Tenant">Tenant</option>
+            <option value="Property Manager">Property Manager</option>
+            <option value="Owner">Owner</option>
+            <option value="HOA Member">HOA Member</option>
+            <option value="Other">Other</option>
+          </select>
 
-    <label for="interest">What interests you most about VogelKop?</label>
-    <input 
-      type="text" 
-      id="interest" 
-      name="entry.1100259588" 
-      placeholder="E.g., AI insights, DeFi payments..." 
-    />
+          <label for="interest">What interests you most about VogelKop?</label>
+          <input 
+            type="text" 
+            id="interest" 
+            name="entry.1100259588" 
+            placeholder="E.g., AI insights, DeFi payments..." 
+          />
 
-    <label for="referral">How did you hear about us?</label>
-    <input 
-      type="text" 
-      id="referral" 
-      name="entry.1778278006" 
-      placeholder="Friend, social, event, etc." 
-    />
+          <label for="referral">How did you hear about us?</label>
+          <input 
+            type="text" 
+            id="referral" 
+            name="entry.1778278006" 
+            placeholder="Friend, social, event, etc." 
+          />
 
-    <button type="submit">Join Beta</button>
-  </form>
-</section>
+          <button type="submit">Join Beta</button>
+        </form>
+      </div>
+    </section>
 
   </main>
 
@@ -367,7 +380,5 @@
       <a href="/terms.html">Terms of Use</a>
     </div>
   </footer>
-
-  
 </body>
 </html>
