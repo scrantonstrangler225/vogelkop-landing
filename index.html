@@ -330,7 +330,20 @@
         <button type="submit">Join Beta</button>
       </form>
 
-      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){ showThankYou(); }"></iframe>
+
+      <div id="thankYouMessage" style="display:none; margin-top:20px;">
+        <p>✅ Thanks for signing up! We’ll be in touch soon.</p>
+      </div>
+
+      <script>
+        let submitted = false;
+
+        function showThankYou() {
+          document.getElementById("signupForm").style.display = "none";
+          document.getElementById("thankYouMessage").style.display = "block";
+        }
+      </script>
     </section>
   </main>
 
