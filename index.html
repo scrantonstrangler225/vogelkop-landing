@@ -292,73 +292,66 @@
       </div>
     </section>
 
-    <section class="bottom-cta" id="get-started">
-      <h2>Ready to unlock next-gen property tools?</h2>
-      <button class="cta" id="showSignupBtn">Create Your Free Account</button>
+    <section>
+  <h2 class="section-title">Join the Beta</h2>
+  <form 
+    action="https://docs.google.com/forms/d/e/1FAIpQLSeJoZXAAct-tJnE5Rp6TjPiUrzWT8J73Rx0T1GKFDl45lXgnw/formResponse" 
+    method="POST" 
+    target="_blank" 
+    novalidate
+  >
+    <label for="fullName">Full Name *</label>
+    <input 
+      type="text" 
+      id="fullName" 
+      name="entry.1246836492" 
+      required 
+      placeholder="Your full name" 
+    />
 
-      <!-- Google Form POST -->
-      <form 
-        id="signupForm" 
-        action="https://docs.google.com/forms/d/e/1FAIpQLSeJoZXAAct-tJnE5Rp6TjPiUrzWT8J73Rx0T1GKFDl45lXgnw/formResponse" 
-        method="POST" 
-      >
-        <label for="fullName">Full Name *</label>
-        <input type="text" name="entry.1246836492" required placeholder="Your full name" />
+    <label for="email">Email Address *</label>
+    <input 
+      type="email" 
+      id="email" 
+      name="entry.420741825" 
+      required 
+      placeholder="you@example.com" 
+    />
 
-        <label for="email">Email Address *</label>
-        <input type="email" name="entry.420741825" required placeholder="you@example.com" />
+    <label for="role">I am a *</label>
+    <select 
+      id="role" 
+      name="entry.1205028045" 
+      required
+    >
+      <option value="" disabled selected>Select your role</option>
+      <option value="Tenant">Tenant</option>
+      <option value="Property Manager">Property Manager</option>
+      <option value="Owner">Owner</option>
+      <option value="HOA Member">HOA Member</option>
+      <option value="Other">Other</option>
+    </select>
 
-        <label for="role">I am a *</label>
-        <select name="entry.1205028045" required>
-          <option value="" disabled selected>Select your role</option>
-          <option value="Tenant">Tenant</option>
-          <option value="Property Manager">Property Manager</option>
-          <option value="Owner">Owner</option>
-          <option value="HOA Member">HOA Member</option>
-          <option value="Other">Other</option>
-        </select>
+    <label for="interest">What interests you most about VogelKop?</label>
+    <input 
+      type="text" 
+      id="interest" 
+      name="entry.1100259588" 
+      placeholder="E.g., AI insights, DeFi payments..." 
+    />
 
-        <label for="interest">What interests you most about VogelKop?</label>
-        <input type="text" name="entry.1100259588" placeholder="E.g., AI insights, DeFi payments..." />
+    <label for="referral">How did you hear about us?</label>
+    <input 
+      type="text" 
+      id="referral" 
+      name="entry.1778278006" 
+      placeholder="Friend, social, event, etc." 
+    />
 
-        <label for="referral">How did you hear about us?</label>
-        <input type="text" name="entry.1778278006" placeholder="Friend, social, event, etc." />
+    <button type="submit">Join Beta</button>
+  </form>
+</section>
 
-        <button type="submit">Join Beta</button>
-      </form>
-
-      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){ showThankYou(); }"></iframe>
-
-      <div id="thankYouMessage" style="display:none; margin-top:20px;">
-        <p>✅ Thanks for signing up! We’ll be in touch soon.</p>
-      </div>
-
-      <script>
-        const form = document.getElementById('signupForm');
-        form.addEventListener('submit', function(e) {
-          e.preventDefault(); // stop default form submission
-          const data = new FormData(form);
-
-          fetch(form.action, {
-            method: 'POST',
-            mode: 'no-cors',
-            body: data
-          }).then(() => {
-            showThankYou();
-            form.reset();
-          }).catch(err => {
-            alert("Something went wrong.");
-            console.error(err);
-          });
-        });
-
-        function showThankYou() {
-          form.style.display = 'none';
-          document.getElementById('thankYouMessage').style.display = 'block';
-        }
-      </script>
-
-    </section>
   </main>
 
   <footer>
